@@ -21,13 +21,13 @@ echo "=============================="
 
 echo "DISK USAGE"
 echo "=============================="
-echo ""disk_usage" \n `df -H | grep -vE '^Filesystem|tmpfs|cdrom|udev' | awk '{ print $1 " " $5}'` \n"
+echo -e "`df -H | grep -vE '^Filesystem|tmpfs|cdrom|udev' | awk '{ print $1 " " $5}'` \n"
 echo "=============================="
 
 #Network Usage
 
-rx_current=$(cat /proc/net/dev | grep 'eth' | tr : " " | awk '{print $2}')
-tx_current=$(cat /proc/net/dev | grep 'eth' | tr : " " | awk '{print $10}')
+rx_current=$(cat /proc/net/dev | grep 'eth0' | tr : " " | awk '{print $2}')
+tx_current=$(cat /proc/net/dev | grep 'eth0' | tr : " " | awk '{print $10}')
 
 rx_conv=`expr $rx_current / 1024`
 tx_conv=`expr $tx_current / 1024`
