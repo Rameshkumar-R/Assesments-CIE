@@ -38,6 +38,8 @@ do
                         #curl http://localhost:9200/_cat/health
                         curl -X GET "localhost:9200/_cat/health?v=true&ts=false&pretty"
                         echo "============================"
+                        echo "if you see the connection reset by peer error, Please run below command check the ElasticSearch Health"
+                        echo "curl -X GET localhost:9200/_cat/health?v=true"
                         break
             ;;
         "Uninstall the Docker and ElasticSearch")
